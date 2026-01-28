@@ -1,8 +1,10 @@
 # Conceptual Reasoning Pipeline (Illustrative, Non-Executable)
 
-This document presents **conceptual stages and pseudocode only**.
-It is intended to illustrate reasoning flow, safety checks, and auditability
-in LLM-assisted document analysis — **not** to provide executable implementations.
+This document presents **conceptual stages and illustrative logic only**.
+It is intended to demonstrate reasoning flow, safety checks, and auditability
+in LLM-assisted document analysis — **not** to provide executable implementations. 
+The pipeline is intentionally framed to surface uncertainty, escalation boundaries, and review obligations rather than to optimize automation.
+
 
 ## Design Principles (Non-Exhaustive)
 
