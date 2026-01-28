@@ -1,8 +1,28 @@
-# Conceptual Reasoning Pipeline (Pseudocode Only)
+# Conceptual Reasoning Pipeline (Illustrative, Non-Executable)
 
 This document presents **conceptual stages and pseudocode only**.
 It is intended to illustrate reasoning flow, safety checks, and auditability
 in LLM-assisted document analysis — **not** to provide executable implementations.
+
+## Design Principles (Non-Exhaustive)
+
+This conceptual pipeline is guided by the following principles:
+
+- **Separation of extraction and interpretation**: Factual identification is explicitly distinguished from inferential reasoning.
+- **Evidence-first reasoning**: All non-trivial claims require traceable source spans.
+- **Uncertainty awareness**: Ambiguity and conditionality are surfaced rather than resolved prematurely.
+- **Human primacy in high-stakes contexts**: The system is designed to escalate, not decide, when judgment or accountability is required.
+- **Auditability over optimization**: Transparency and reviewability are prioritized over throughput or automation.
+
+## Explicit Non-Goals
+
+This conceptual pipeline does **not** aim to:
+
+- Provide autonomous decision-making or recommendations
+- Replace legal, scientific, or domain-expert judgment
+- Resolve normative or ethical questions
+- Infer intent, liability, or compliance outcomes
+- Serve as a deployable or production-ready system
 
 ## High-Level Stages (Illustrative)
 
@@ -41,4 +61,4 @@ in LLM-assisted document analysis — **not** to provide executable implementati
 
 9. **Audit Trail**
    - Log non-sensitive process metadata
-   - Preserve reasoning steps for later inspection
+   - Preserve reasoning steps and decision boundaries for later inspection
