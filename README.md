@@ -1,64 +1,37 @@
-# LLM Reasoning Safety & Agentic AI Governance
+# LLM Document Reasoning Safety Demo
 
-A public, redacted portfolio demonstrating methods for **Responsible AI, governance-by-design, human oversight, auditability, and reasoning safety** in LLM-assisted workflows.
+A public, redacted portfolio demonstrating methods for **reasoning quality, evidence grounding, uncertainty handling, human oversight, escalation, and auditability** in high-stakes LLM-assisted document analysis.
 
 > **Privacy by design:** all examples are synthetic or anonymized. This repository contains no proprietary prompts, private datasets, case-specific materials, credentials, or production endpoints.
 
-## Two complementary parts
+## What this repository focuses on
 
-### 1. Runnable Agentic AI Governance Demo
+The artifacts in `conceptual/`, `docs/`, and `examples/` examine a different layer of Responsible AI from runtime agent controls. They emphasize:
 
-The `runnable/` directory contains a dependency-free Python sandbox showing how an enterprise agent can be wrapped in practical governance controls:
+- **separation of extraction from interpretation** — factual identification is kept distinct from inferential judgment;
+- **evidence-first reasoning** — non-trivial claims should remain traceable to source support;
+- **uncertainty awareness** — ambiguity and conditionality are surfaced rather than converted into unsupported certainty;
+- **human primacy in consequential judgments** — the system escalates rather than autonomously deciding when accountability or domain judgment is required;
+- **consistency and contradiction checks** — conflicting support is surfaced for review;
+- **reviewable outputs and audit trails** — reasoning boundaries and source evidence remain inspectable.
 
-- role-based / least-privilege tool permissions
-- policy-configured risk tiers
-- action-specific human approval gates
-- logging and runtime telemetry
-- audit trails with field-level redaction
-- deny-by-default behavior
-- a configurable emergency kill switch
-- synthetic tool execution with no external side effects
-- automated tests and CI
+## Companion project: Agentic AI Governance
 
-**Quick start**
+For a **runnable Python governance-by-design demonstration** focused on bounded autonomy, role-based / least-privilege tool permissions, policy-configured risk tiers, explicit human approval gates, system instructions, audit logging, runtime telemetry, redaction, deny-by-default behavior, an emergency kill switch, and automated tests, see:
 
-```bash
-python runnable/governance_demo.py \
-  --scenario runnable/scenarios/approval_required_plan.json
-```
+**[agentic-ai-governance-demo](https://github.com/pdeabreu-research/agentic-ai-governance-demo)**
 
-Then explicitly approve the high-impact action:
+Together, the two projects address complementary layers of Responsible AI:
 
-```bash
-python runnable/governance_demo.py \
-  --scenario runnable/scenarios/approval_required_plan.json \
-  --approve publish-1
-```
+- **Agentic AI Governance Demo:** operational controls around what an AI agent may do.
+- **LLM Document Reasoning Safety Demo:** reasoning quality, evidentiary discipline, uncertainty, and when an AI system should defer to human judgment.
 
-See [`runnable/README.md`](runnable/README.md) for the architecture, scenarios, and test commands.
+For advanced quantitative-methods work, see the **[Statistical Analysis Portfolio](https://github.com/pdeabreu-research/pdeabreu-statistical-analyses)**.
 
-### 2. Conceptual Reasoning-Safety Artifacts
+## How to read this repository
 
-The `conceptual/`, `docs/`, and `examples/` directories retain non-executable design artifacts for high-stakes document analysis. They emphasize:
+- `conceptual/` — non-executable reasoning-flow artifacts and governance principles.
+- `docs/` — risk framing and threat-model documentation.
+- `examples/` — synthetic examples designed to surface ambiguity, conditionality, and escalation boundaries.
 
-- separation of factual extraction from interpretation
-- evidence-first reasoning
-- explicit uncertainty labeling
-- human primacy in consequential judgments
-- traceable evidence spans
-- escalation when support is ambiguous
-- auditability over opaque automation
-
-## Why both layers matter
-
-Responsible AI requires more than a policy document and more than a technical prototype. This repository demonstrates the connection between:
-
-**risk framing → policy requirements → technical controls → human oversight → telemetry → auditable outcomes**
-
-The runnable sandbox focuses on operational controls around agent tool use. The conceptual artifacts focus on reasoning quality, ambiguity, and review boundaries.
-
-## Scope and limitations
-
-This repository is a **portfolio demonstration**, not a production AI platform, legal/compliance tool, or deployment-ready reference implementation.
-
-The runnable demo intentionally uses mock tools and synthetic scenarios so that governance logic can be inspected and tested without credentials, external APIs, or private data. Production use would require authenticated identity, durable authorization, real model/tool integrations, tamper-resistant monitoring, security/privacy engineering, formal evaluation, incident response, and organization-specific validation.
+This is a **design and evaluation portfolio**, not a production system, legal/compliance tool, or deployment-ready reference implementation. Any real-world use would require domain-specific validation, privacy/security engineering, formal evaluation, and accountable human review.
