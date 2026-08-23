@@ -1,0 +1,52 @@
+{
+  "policy_version": "1.0",
+  "agent_enabled": true,
+  "roles": {
+    "research_assistant": {
+      "allowed_tools": [
+        "search_documents",
+        "summarize_evidence",
+        "draft_report",
+        "publish_external"
+      ]
+    }
+  },
+  "tools": {
+    "search_documents": {
+      "risk_tier": "low",
+      "requires_human_approval": false
+    },
+    "summarize_evidence": {
+      "risk_tier": "low",
+      "requires_human_approval": false
+    },
+    "draft_report": {
+      "risk_tier": "medium",
+      "requires_human_approval": false
+    },
+    "publish_external": {
+      "risk_tier": "high",
+      "requires_human_approval": true
+    },
+    "read_restricted_record": {
+      "risk_tier": "high",
+      "requires_human_approval": true
+    }
+  },
+  "blocked_tools": [
+    "change_access_control",
+    "delete_audit_log"
+  ],
+  "limits": {
+    "max_actions_per_run": 6
+  },
+  "logging": {
+    "redact_keys": [
+      "token",
+      "secret",
+      "password",
+      "personal_data",
+      "raw_content"
+    ]
+  }
+}
